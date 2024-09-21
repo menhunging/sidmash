@@ -1,0 +1,96 @@
+.header {
+  background: linear-gradient(180deg, #21354f 0%, rgba(7, 50, 89, 0) 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 35px 0;
+  z-index: 10;
+
+  @include responsive1599 {
+    padding: 25px 0;
+  }
+
+  @include responsive767 {
+    padding: 20px 0;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    @include responsive1599 {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    @include responsive1279 {
+      gap: 15px;
+    }
+
+    @include responsive1023 {
+      gap: 10px;
+    }
+
+    @include responsive767 {
+      flex-direction: row;
+    }
+  }
+
+  .logo {
+    @include responsive1279 {
+      margin: 0 auto;
+    }
+  }
+}
+
+.menu {
+  @include responsiveMinWidth1280 {
+    display: flex !important;
+  }
+
+  @include responsive1279 {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    @include responsive1599 {
+      gap: 20px;
+    }
+  }
+
+  &__item {
+  }
+
+  &__link {
+    color: $colorWhite;
+
+    @include text-decoration-hover($colorWhite);
+  }
+}
+
+.lang-block {
+  color: $colorWhite;
+
+  @include responsive1599 {
+    display: none;
+  }
+
+  .lang {
+  }
+}

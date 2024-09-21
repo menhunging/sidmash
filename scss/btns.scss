@@ -1,0 +1,75 @@
+.btn {
+  font-family: $fontMain;
+  -webkit-appearance: none;
+  position: relative;
+  color: $colorBlack;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  padding: 20px 60px;
+  overflow: hidden;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+  gap: 10px;
+  transition: transform 0.3s;
+
+  @include responsive1279 {
+    padding: 16px 60px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  @include responsive767 {
+    font-size: 10px;
+    line-height: 16px;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &--white {
+    background-color: $colorWhite;
+    color: $colorBlue;
+
+    &::after {
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.469668 13.4053C0.176777 13.1124 0.176777 12.6376 0.469668 12.3447L5.9393 6.875L0.469668 1.4053C0.176777 1.1124 0.176777 0.637602 0.469668 0.344702C0.762558 0.0518017 1.23744 0.0518017 1.53033 0.344702L7.5303 6.3447C7.8232 6.6376 7.8232 7.1124 7.5303 7.4053L1.53033 13.4053C1.23744 13.6982 0.762558 13.6982 0.469668 13.4053Z' fill='%230164AA'/%3e%3c/svg%3e ");
+    }
+  }
+
+  &--blue {
+    background-color: $colorBlue;
+    color: $colorWhite;
+
+    &::after {
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='8' height='15' viewBox='0 0 8 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.469668 13.8694C0.176777 13.5766 0.176777 13.1017 0.469668 12.8088L5.9393 7.33911L0.469668 1.86941C0.176777 1.57651 0.176777 1.10171 0.469668 0.808809C0.762558 0.515909 1.23744 0.515909 1.53033 0.808809L7.5303 6.80881C7.8232 7.10171 7.8232 7.57651 7.5303 7.86941L1.53033 13.8694C1.23744 14.1623 0.762558 14.1623 0.469668 13.8694Z' fill='white'/%3e%3c/svg%3e ");
+    }
+  }
+
+  &--arrow {
+    @include after {
+      position: relative;
+      width: 24px;
+      height: 24px;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      @include responsive767 {
+        width: 11px;
+        height: 11px;
+        background-size: 6px;
+      }
+    }
+  }
+}
