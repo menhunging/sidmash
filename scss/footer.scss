@@ -1,2 +1,197 @@
 .footer {
+  background-color: #ebe7e7;
+  padding: 30px 0;
+
+  @include responsive1279 {
+    padding: 30px 0 15px;
+  }
+
+  &-top {
+    padding: 30px 0;
+
+    @include responsive1279 {
+      padding: 15px 0;
+    }
+
+    &__inner {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      width: 100%;
+
+      @include responsive1279 {
+        flex-wrap: wrap;
+      }
+    }
+
+    .logo {
+      @include responsive767 {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+
+  &-menu {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px 40px;
+    max-width: 535px;
+    height: 112px;
+
+    @include responsive1023 {
+      max-width: 375px;
+      height: 135px;
+    }
+
+    @include responsive767 {
+      gap: 20px 10px;
+      height: auto;
+      max-width: 100%;
+      width: 100%;
+      flex-direction: row;
+    }
+
+    li {
+      @include responsive767 {
+        width: calc(100% / 3);
+      }
+    }
+
+    a {
+      @include text-decoration-hover($colorBlack);
+    }
+  }
+
+  &-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+
+    @include responsive1279 {
+      width: 100%;
+      grid-template-columns: 1fr 1fr 1fr;
+      white-space: nowrap;
+      margin-top: 50px;
+    }
+
+    @include responsive767 {
+      flex-direction: column;
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .site-link {
+      &::before {
+        @include responsive767 {
+          position: relative;
+          top: auto;
+          transform: initial;
+        }
+      }
+
+      @include responsive767 {
+        width: auto;
+        color: $colorBlack;
+      }
+    }
+
+    .site-link--adress {
+      grid-column: 1/3;
+
+      @include responsive1279 {
+        grid-column: initial;
+      }
+
+      @include responsive767 {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &-bottom {
+    padding: 30px 0;
+    border-top: solid 1px $colorBlack-a3;
+
+    @include responsive767 {
+      padding: 15px 0;
+    }
+
+    &__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @include responsive767 {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 20px;
+      }
+    }
+  }
+}
+
+.developers {
+  color: $colorBlack;
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+
+  @include responsive767 {
+    gap: 10px;
+  }
+
+  &__text {
+    line-height: 14px;
+
+    @include responsive767 {
+      font-size: 11px;
+      line-height: 6px;
+    }
+  }
+
+  &__logo {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='66' height='20' viewBox='0 0 66 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M13.7031 0H0.5V19.661H3.20833V11.3559H10.9948L13.026 9.32203V8.30509H3.20833V2.88136H13.7031V0Z' fill='%23333333'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M20.0508 20C23.837 20 26.9062 17.0405 26.9062 13.3898C26.9062 9.73914 23.837 6.77966 20.0508 6.77966C16.2646 6.77966 13.1953 9.73914 13.1953 13.3898C13.1953 17.0405 16.2646 20 20.0508 20ZM20.0508 17.6271C22.4347 17.6271 24.3672 15.73 24.3672 13.3898C24.3672 11.0496 22.4347 9.15254 20.0508 9.15254C17.6669 9.15254 15.7344 11.0496 15.7344 13.3898C15.7344 15.73 17.6669 17.6271 20.0508 17.6271Z' fill='%23333333'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M58.6445 20C62.4307 20 65.5 17.0405 65.5 13.3898C65.5 9.73914 62.4307 6.77966 58.6445 6.77966C54.8584 6.77966 51.7891 9.73914 51.7891 13.3898C51.7891 17.0405 54.8584 20 58.6445 20ZM58.6445 17.6271C61.0284 17.6271 62.9609 15.73 62.9609 13.3898C62.9609 11.0496 61.0284 9.15254 58.6445 9.15254C56.2606 9.15254 54.3281 11.0496 54.3281 13.3898C54.3281 15.73 56.2606 17.6271 58.6445 17.6271Z' fill='%23333333'/%3e%3cpath d='M31.6458 7.11864H28.9375V17.7966L30.7995 19.661H40.1094V7.11864H37.0625V16.9492H31.6458V7.11864Z' fill='%23333333'/%3e%3cpath d='M45.8646 7.11864H42.987V19.661H45.8646V11.6949L49.7578 9.49153H51.7891V7.11864H48.7422L45.8646 8.81356V7.11864Z' fill='%23333333'/%3e%3c/svg%3e ");
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s;
+    width: 65px;
+    height: 20px;
+    @include invisLink;
+
+    @include responsive767 {
+      width: 35px;
+      height: 11px;
+      background-size: contain;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.copyRight {
+  color: $colorBlack-a8;
+
+  @include responsive767 {
+    text-align: right;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  a {
+    @include text-decoration-hover($colorBlack);
+
+    @include responsive1279 {
+      display: block;
+    }
+  }
+}
+
+.thisYear {
 }
