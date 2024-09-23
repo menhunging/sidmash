@@ -237,6 +237,75 @@ $(document).ready(function () {
       },
     });
   }
+
+  if ($(".our-history").length > 0) {
+    const swiperSmall = new Swiper(".slider-history-small", {
+      spaceBetween: 30,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesProgress: true,
+      breakpoints: {
+        0: {
+          spaceBetween: 20,
+          slidesPerView: 2.2,
+        },
+        768: {
+          spaceBetween: 30,
+          slidesPerView: 4,
+        },
+      },
+    });
+
+    const swiperBig = new Swiper(".slider-history-big", {
+      spaceBetween: 30,
+      navigation: {
+        nextEl: ".swiperBtnNext",
+        prevEl: ".swiperBtnPrev",
+      },
+      thumbs: {
+        swiper: swiperSmall,
+      },
+    });
+  }
+
+  if ($(".catalog-slider").length > 0) {
+    const sliders = document.querySelectorAll(".catalog-slider");
+
+    let mySwipers = [];
+
+    function sliderinit() {
+      sliders.forEach((slider, index) => {
+        if (!slider.swiper) {
+          mySwipers[index] = new Swiper(slider, {
+            slidesPerView: 3,
+            navigation: {
+              nextEl: $(slider).find(".swiperBtnNext")[0],
+              prevEl: $(slider).find(".swiperBtnPrev")[0],
+            },
+            breakpoints: {
+              0: {
+                spaceBetween: 20,
+                slidesPerView: 1,
+              },
+              480: {
+                slidesPerView: 2,
+              },
+              768: {
+                slidesPerView: 3,
+              },
+            },
+            on: {
+              init: function (swiper) {},
+            },
+          });
+        } else {
+          return;
+        }
+      });
+    }
+
+    sliders.length && sliderinit();
+  }
 });
 
 $(window).scroll(function () {
