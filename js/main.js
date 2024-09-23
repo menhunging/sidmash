@@ -306,6 +306,89 @@ $(document).ready(function () {
 
     sliders.length && sliderinit();
   }
+
+  if ($(".similar-products-slider").length > 0) {
+    const swiper = new Swiper(".similar-products-slider", {
+      slidesPerView: 4,
+      spaceBetween: 20,
+      watchSlidesProgress: true,
+      navigation: {
+        prevEl: ".similar-products-slider .swiperBtnPrev",
+        nextEl: ".similar-products-slider .swiperBtnNext",
+      },
+      breakpoints: {
+        0: {
+          spaceBetween: 20,
+          slidesPerView: 1,
+        },
+        390: {
+          spaceBetween: 20,
+          slidesPerView: 2,
+        },
+        480: {
+          slidesPerView: 3,
+        },
+        768: {
+          slidesPerView: 4,
+        },
+      },
+    });
+  }
+
+  if ($(".card").length > 0) {
+    const swiperCardSmall = new Swiper(".card-slider-small", {
+      spaceBetween: 30,
+      slidesPerView: 3,
+      freeMode: true,
+      watchSlidesProgress: true,
+      direction: "vertical",
+    });
+
+    const swiperCardBig = new Swiper(".card-slider-big", {
+      spaceBetween: 10,
+      watchSlidesProgress: true,
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true,
+      },
+      // navigation: {
+      //   nextEl: ".swiper-button-next",
+      //   prevEl: ".swiper-button-prev",
+      // },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      thumbs: {
+        swiper: swiperCardSmall,
+      },
+    });
+  }
+
+  if ($(".card-info__head").length > 0) {
+    $(".card-info__head").on("click", function () {
+      if ($(this).hasClass("opened")) {
+        $(this)
+          .removeClass("opened")
+          .parents(".card-info__line")
+          .find(".card-info__body")
+          .stop()
+          .slideUp();
+      } else {
+        $(this)
+          .addClass("opened")
+          .parents(".card-info__line")
+          .find(".card-info__body")
+          .stop()
+          .slideDown();
+      }
+    });
+
+    $(".card-info .link-more").on("click", function () {
+      $(this).hide();
+      $(this).parents(".card-info__line").find("li").removeClass("disabled");
+    });
+  }
 });
 
 $(window).scroll(function () {
