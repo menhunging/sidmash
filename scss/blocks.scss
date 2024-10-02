@@ -96,7 +96,6 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: 70px;
 
     @include responsive1599 {
@@ -284,7 +283,7 @@
       @include responsive1023 {
         font-size: 14px;
         line-height: 16px;
-        max-width: 200px;
+        max-width: 230px;
       }
 
       @include responsive767 {
@@ -304,29 +303,6 @@
 
       @include responsive767 {
         margin-top: 0;
-      }
-
-      .btn {
-        padding: 20px 30px;
-
-        @include responsive1439 {
-          padding: 10px 30px;
-          border-radius: 15px;
-          font-size: 16px;
-        }
-
-        @include responsive1023 {
-          padding: 5px 15px;
-          font-size: 14px;
-          gap: 5px;
-          border-radius: 10px;
-        }
-
-        @include responsive767 {
-          font-size: 10px;
-          line-height: 16px;
-          padding: 10px 15px;
-        }
       }
     }
 
@@ -985,6 +961,10 @@
       transform: translate(160px, -50px);
     }
 
+    @include responsive1439{
+      transform: translate(50px, -50px);
+    }
+
     @include responsive1279 {
       width: 445px;
       height: 630px;
@@ -1023,6 +1003,10 @@
       }
     }
   }
+}
+
+.news-page {
+  padding-top: 0;
 }
 
 .news {
@@ -1091,7 +1075,7 @@
   &__media {
     width: 100%;
     height: auto;
-    padding-top: calc(350 / 561 * 100%);
+    padding-top: calc(250 / 561 * 100%);
     position: relative;
 
     @include responsive767 {
@@ -1208,16 +1192,6 @@
 
     .btn {
       border-color: $colorBlue;
-
-      @include responsive1279 {
-        padding-left: 30px;
-        padding-right: 30px;
-      }
-
-      @include responsive1023 {
-        padding: 15px;
-        font-size: 16px;
-      }
     }
   }
 }
@@ -1444,7 +1418,7 @@
 }
 
 .breadcrumbs {
-  padding: 60px 0;
+  padding: 50px 0;
   // background: linear-gradient(360deg, #d9d9d9 0%, #ffffff 110.28%);
   background: linear-gradient(180deg, #f3f3f3 60.5%, #ffffff 100%);
   position: relative;
@@ -2722,25 +2696,25 @@
   }
 
   &__map {
-    padding: 80px 0;
+    margin-top: 50px;
 
     @include responsive1279 {
-      padding: 40px 0;
+      margin-top: 40px;
     }
 
     @include responsive767 {
-      padding: 20px 0;
+      margin-top: 30px;
     }
 
     .map {
-      margin-top: 80px;
+      margin-top: 50px;
 
       @include responsive1279 {
         margin-top: 40px;
       }
 
       @include responsive767 {
-        margin-top: 20px;
+        margin-top: 30px;
       }
     }
   }
@@ -2812,8 +2786,8 @@
     background: transparent;
   }
 
-  .card{
-  padding-top: 0;
+  .card {
+    padding-top: 0;
   }
 }
 

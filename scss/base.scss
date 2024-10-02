@@ -37,6 +37,7 @@ body {
 
   @include responsive1439 {
     padding: 0 20px;
+    max-width: 1150px;
   }
 
   @include responsive1279 {
@@ -579,14 +580,14 @@ picture {
 }
 
 section {
-  padding: 82px 0;
+  padding: 50px 0;
 
   @include responsive1023 {
-    padding: 60px 0;
+    padding: 40px 0;
   }
 
   @include responsive767 {
-    padding: 50px 0;
+    padding: 30px 0;
   }
 }
 
@@ -667,6 +668,11 @@ div {
     line-height: 24px;
     overflow: hidden;
 
+    @include responsive1439 {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
     @include responsive767 {
       color: transparent;
       width: 24px;
@@ -697,14 +703,6 @@ div {
     line-height: 24px;
     overflow: hidden;
 
-    @include responsive767 {
-      color: transparent;
-      width: 24px;
-      height: 24px;
-      overflow: hidden;
-      position: relative;
-    }
-
     @include before {
       position: relative;
       width: 20px;
@@ -720,9 +718,22 @@ div {
       }
     }
 
+    @include responsive1439 {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
     @include responsive1279 {
       font-size: 18px;
       line-height: 24px;
+    }
+
+    @include responsive767 {
+      color: transparent;
+      width: 24px;
+      height: 24px;
+      overflow: hidden;
+      position: relative;
     }
   }
 
@@ -731,9 +742,9 @@ div {
     font-size: 18px;
     line-height: 22px;
 
-    @include responsive1279 {
+    @include responsive1439 {
       font-size: 16px;
-      line-height: 20px;
+      line-height: 22px;
     }
 
     @include before {
