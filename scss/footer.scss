@@ -1,6 +1,7 @@
 .footer {
   background-color: #ebe7e7;
   padding: 30px 0;
+  position: relative;
 
   @include responsive1279 {
     padding: 30px 0 15px;
@@ -8,9 +9,10 @@
 
   &-top {
     padding: 30px 0;
+    position: relative;
 
     @include responsive1279 {
-      padding: 15px 0;
+      padding: 55px 0 15px;
     }
 
     &__inner {
@@ -28,7 +30,7 @@
       @include responsive767 {
         position: absolute;
         top: 0;
-        left: 0;
+        left: 15px;
       }
     }
   }
