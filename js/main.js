@@ -389,6 +389,13 @@ $(document).ready(function () {
       $(this).parents(".card-info__line").find("li").removeClass("disabled");
     });
   }
+
+  if ($(".article-text-slider").length > 0) {
+    const swiper = new Swiper(".article-text-slider", {
+      effect: "cards",
+      grabCursor: true,
+    });
+  }
 });
 
 $(window).scroll(function () {

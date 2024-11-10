@@ -2342,7 +2342,7 @@
   }
 
   .news-item {
-    &:nth-child(6n-1) {
+    &:nth-child(5n) {
       grid-column: 2/4;
 
       @include responsive639 {
@@ -2350,23 +2350,23 @@
       }
     }
 
-    &:last-child {
-      grid-column: 1/4;
+    // &:last-child {
+    //   grid-column: 1/4;
 
-      @include responsive639 {
-        grid-column: initial;
-      }
+    //   @include responsive639 {
+    //     grid-column: initial;
+    //   }
 
-      .news__media {
-        padding-top: 0;
-        height: 350px;
+    //   .news__media {
+    //     padding-top: 0;
+    //     height: 350px;
 
-        @include responsive639 {
-          height: auto;
-          padding-top: calc(268 / 561 * 100%);
-        }
-      }
-    }
+    //     @include responsive639 {
+    //       height: auto;
+    //       padding-top: calc(268 / 561 * 100%);
+    //     }
+    //   }
+    // }
   }
 }
 
@@ -3374,7 +3374,7 @@
     gap: 75px;
     padding: 50px 0 0;
 
-    @include responsive767{
+    @include responsive767 {
       padding-top: 0;
     }
   }
@@ -3417,6 +3417,321 @@
     @include responsive767 {
       font-size: 14px;
       line-height: 24px;
+    }
+  }
+}
+
+.article-page {
+  padding: 120px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 25.4%, #cacaca 100%);
+
+  @include responsive1279 {
+    padding: 110px 0;
+  }
+
+  @include responsive767 {
+    padding: 66px 0;
+  }
+
+  .breadcrumbs {
+  }
+
+  .article-page__content {
+    @include responsive767 {
+      padding: 0;
+    }
+
+    .site-media {
+      width: 862px;
+      height: 552px;
+      border-radius: 20px;
+      overflow: hidden;
+      z-index: -1;
+
+      @include responsive1799 {
+        width: 100%;
+        height: auto;
+      }
+
+      @include responsive1439 {
+        height: 640px;
+      }
+
+      @include responsive1279 {
+        height: 556px;
+      }
+
+      @include responsive1023 {
+        height: 445px;
+      }
+
+      @include responsive767 {
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+
+  .article-page__row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 3;
+
+    @include responsive767 {
+      gap: 20px;
+      flex-direction: column-reverse;
+    }
+
+    & + .article-page__row {
+      margin-top: 140px;
+
+      @include responsive1599 {
+        margin-top: 100px;
+      }
+
+      @include responsive1439 {
+        margin-top: 150px;
+      }
+
+      @include responsive1279 {
+        margin-top: 80px;
+      }
+
+      @include responsive1023 {
+        margin-top: 60px;
+      }
+
+      @include responsive767 {
+        margin-top: 30px;
+      }
+    }
+
+    &:nth-child(2n) {
+      flex-direction: row-reverse;
+
+      @include responsive767 {
+        flex-direction: column-reverse;
+      }
+
+      .article-page__col {
+        background-color: $colorWhite;
+        border-radius: 20px;
+        max-width: 1140px;
+
+        @include responsive1799 {
+          max-width: 1030px;
+        }
+
+        @include responsive1599 {
+          max-width: 930px;
+        }
+
+        @include responsive1279 {
+          max-width: 616px;
+        }
+
+        @include responsive1023 {
+          max-width: 500px;
+        }
+
+        &:first-child {
+          padding: 34px 64px;
+
+          @include responsive1439 {
+            padding: 25px 30px;
+            gap: 10px;
+          }
+
+          @include responsive1439 {
+            padding: 34px 64px;
+          }
+
+          @include responsive1023 {
+            padding: 25px 30px;
+          }
+
+          @include responsive767 {
+            padding: 0;
+            max-width: 100%;
+            background: transparent;
+          }
+        }
+      }
+
+      .site-media {
+        width: 742px;
+        height: 524px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+
+        @include responsive1279 {
+          height: 554px;
+          width: 450px;
+        }
+
+        @include responsive1023 {
+          height: 350px;
+          width: 350px;
+        }
+
+        @include responsive767 {
+          width: 100%;
+          height: auto;
+          position: relative;
+          transform: initial;
+          top: 0;
+          z-index: 3;
+        }
+      }
+    }
+  }
+
+  .article-page__col {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    font-size: 24px;
+    line-height: 50px;
+
+    @include responsive1799 {
+      max-width: 760px;
+      gap: 20px;
+    }
+
+    @include responsive1599 {
+      max-width: 670px;
+    }
+
+    @include responsive1439 {
+      font-size: 20px;
+      line-height: 44px;
+      max-width: 545px;
+    }
+
+    @include responsive1279 {
+      max-width: 480px;
+      line-height: 42px;
+    }
+
+    @include responsive1023 {
+      max-width: 345px;
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+    @include responsive767 {
+      max-width: 100%;
+    }
+  }
+
+  .caption {
+    color: $colorBlack;
+  }
+
+  .section-title .caption::before {
+    white-space: nowrap;
+  }
+
+  .news {
+    margin-top: 140px;
+
+    @include responsive1023 {
+      margin-top: 70px;
+    }
+  }
+
+  .news__inner {
+    &:before {
+      top: -30px;
+      left: -290px;
+      width: calc(100% + 150px);
+    }
+  }
+}
+
+.article-text {
+  display: flex;
+  position: relative;
+  z-index: 2;
+
+  .text {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 53px;
+    padding: 40px;
+    background-color: $colorWhite;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    flex: 1;
+    min-height: 1160px;
+    position: relative;
+
+    & + .text {
+      z-index: -2;
+    }
+
+    &:hover {
+    }
+  }
+}
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 53px;
+  text-align: center;
+  gap: 40px;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+
+  @include responsive1279 {
+    font-size: 20px;
+    line-height: 40px;
+  }
+
+  @include responsive1023 {
+    font-size: 18px;
+    line-height: 24px;
+
+    br {
+      display: none;
+    }
+  }
+
+  @include responsive1023 {
+    font-size: 12px;
+    line-height: 20px;
+    gap: 20px;
+  }
+
+  @include responsive767 {
+    min-height: 400px;
+    padding-bottom: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .site-media {
+    width: 380px;
+    margin: 0 auto;
+    pointer-events: none;
+
+    @include responsive1279 {
+      width: 300px;
+    }
+
+    @include responsive767 {
+      width: 160px;
     }
   }
 }
