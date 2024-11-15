@@ -390,10 +390,12 @@ $(document).ready(function () {
     });
   }
 
-  if ($(".article-text-slider").length > 0) {
-    const swiper = new Swiper(".article-text-slider", {
-      effect: "cards",
-      grabCursor: true,
+  if ($(".article-page__col--more").length > 0) {
+    $(".btn-article-more").on("click", function (event) {
+      event.preventDefault();
+
+      $(".article-page__col--more").slideDown();
+      $(".btn-article-more").hide();
     });
   }
 });
